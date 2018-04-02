@@ -30,4 +30,9 @@ class Auction
      * @var \DateTime
      */
     public $created_at;
+
+    /**
+     * @var Car
+     */
+    public $car;
 }

@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect()->to(
-        route('cars.index')
+        route('auctions.index')
     );
 });
 
 
 Route::resource('cars', 'CarController')->only(['index', 'show']);
+
+Route::resource('auctions', 'AuctionController')->only(['index', 'create', 'edit']);
