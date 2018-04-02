@@ -11,6 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->to(
+        route('cars.index')
+    );
 });
+
+
+Route::resource('cars', 'CarController')->only(['index', 'show']);
