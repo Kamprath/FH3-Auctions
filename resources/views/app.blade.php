@@ -13,7 +13,7 @@
         @yield('head')
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" id="app">
             <nav class="navbar is-secondary">
                 <div class="navbar-brand">
                     <span class="navbar-item" href="https://bulma.io">
@@ -37,6 +37,6 @@
             </div>
         </div>
 
-        @yield('scripts')
+        <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>
