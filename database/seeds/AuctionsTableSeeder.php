@@ -11,13 +11,10 @@ class AuctionsTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::raw('delete from cars');
-        foreach ((new Keboola\Csv\CsvFile(base_path() . '/database/seeds/csv/auctions.csv')) as $row) {
-            \App\Auction::create([
-                'car_id' => (int) $row[0],
-                'buy_price' => (float) str_replace(',', '', $row[1]),
-                'sell_price' => (float) str_replace(',', '', $row[2])
-            ]);
-        }
+        \App\Auction::where('id', '>', 0)->delete();
+
+        \Illuminate\Support\Facades\DB::unprepared(
+            file_get_contents('database/seeds/sql/auctions.sql')
+        );
     }
 }
