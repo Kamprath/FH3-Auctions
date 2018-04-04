@@ -1,5 +1,5 @@
 @extends('app')
 
 @section('content')
-    <car-list v-bind:cars="{{ json_encode($cars) }}">
+    <car-list :cars="{{ json_encode($cars) }}"></car-list>
 @endsection

@@ -34,7 +34,7 @@
                                     {{ car.year }} {{ car.make }} {{ car.model }}
                                 </a>
                             </td>
-                            <td>${{ car.price }}</td>
+                            <td>${{ Number(car.price).toLocaleString() }}</td>
                             <td class="has-text-centered">{{ car.auctions.length }}</td>
                         </tr>
                     </tbody>

@@ -16,32 +16,7 @@
     </section>
 
     <section class="section">
-        <nav class="level">
-            <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">Avg. Buy Price</p>
-                    <p class="title">$20,000</p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">Avg. Sell Price</p>
-                    <p class="title">$76,000</p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">ROI</p>
-                    <p class="title">6%</p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered">
-                <div>
-                    <p class="heading">Total Profit</p>
-                    <p class="title">$213,500</p>
-                </div>
-            </div>
-        </nav>
+        <car-stats :car="{{ json_encode($car) }}"></car-stats>
     </section>
 
     <section class="section">

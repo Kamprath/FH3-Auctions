@@ -79,10 +79,10 @@ class CarRepository extends Repository implements CarRepositoryInterface
         $contract->auctions = $car->auctions->map(function(Auction $auction) {
             $auctionContract = new \App\Contracts\Auction();
 
-            $auctionContract->id = $auction->id;
-            $auctionContract->car_id = $auction->car_id;
-            $auctionContract->buy_price = $auction->buy_price;
-            $auctionContract->sell_price = $auction->sell_price;
+            $auctionContract->id = (int) $auction->id;
+            $auctionContract->car_id = (int) $auction->car_id;
+            $auctionContract->buy_price = (float) $auction->buy_price;
+            $auctionContract->sell_price = (float) $auction->sell_price;
             $auctionContract->created_at = new DateTime($auction->created_at);
 
             return $auctionContract;
